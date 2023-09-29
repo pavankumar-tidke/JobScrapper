@@ -1,0 +1,87 @@
+{% extends '_userbase.html' %}
+{% load static %}
+
+{% block usertitle %}User | Job Scrapper{% endblock usertitle %}
+
+{% block userbreadcrumb_path %} <span class="material-symbols-outlined align-bottom text-blue-800">home</span> <span class="text-gray-500">/</span>&nbsp;&nbsp;&nbsp;Job Scrapper {% endblock userbreadcrumb_path %}
+{% block userbreadcrumb_title %} Job Scrapper {% endblock userbreadcrumb_title %}
+
+
+{% block userbody %}
+
+
+    <div class="my-5 h-max ">
+
+        <div class="scrapper-search   border border-gray-400  p-5 my-5 rounded-lg shadow-lg">
+        
+            <h3 class="my-5 text-center text-2xl font-bold text-black">Please provide the required information to scrap jobs </h3>
+
+            <div class="grid gap-10 mb-6 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+                <div>
+                    <label for="Skills" class="block mb-2 text-md font-bold text-gray-900">Skills, Keywords, Job names</label>
+                    <input name="skill" type="text" id="skill" class="bg-gray-50 border border-gray-600 text-black font-bold text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Keywords, Job names, others" required>
+                </div>
+                <div>
+                    <label for="Location" class="block mb-2 text-md font-bold text-gray-900">Location</label>
+                    <input name="location" type="text" id="location" class="bg-gray-50 border border-gray-600 text-black font-bold text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Pune, Mumbai" required>
+                </div>  
+            </div>
+
+            <div class="flex justify-center">
+                <button type="button" id="job-scrap-start-btn" class="align-middle text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Start Scrapping </button>
+            </div>
+
+        </div>
+
+
+        {% comment %} scrap result {% endcomment %}
+        <div class="scrapper-result  my-5">
+             
+            <h3 class="scrapper-result-heading my-5 text-2xl font-bold text-black"></h3> 
+            
+            
+            <div class="job_card_list px-1  grid  lg:grid-cols-2 md:grid-cols-2 w-full gap-6 mb-6 shadow-lg overflow-y-auto max-h-[630px]">
+                
+                
+
+                {% comment %} <div class="w-full border border-gray-500 p-2 rounded-lg  shadow-lg hover:bg-blue-50 cursor-pointer ">
+                    <div class="flex w-full">
+                        <div class="flex w-full">
+                            <img src="{% static '/media/image/linkedin.png' %}" class="mr-1 w-fit w-16 h-16" />
+                            <div class=" w-full">
+                                <h3 class="text-xl font-bold text-black tracking-wide">Job title </h3>
+                                <h3 class="text-[14px] font-semibold text-gray-500 ">Job company name</h3>
+                                <h3 class="text-md font-normal text-gray-800 ">Job address</h3>
+                            </div>  
+                        </div> 
+                        <div class="flex justify-end w-full space-x-2 ">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">book</span>
+                        </div>  
+                    </div>
+                    <div class="mt-4 ml-16 flex w-full space-x-3">
+                        <h3 class="text-md text-center  font-semibold text-gray-900 tracking-wide flex "><span class="material-symbols-outlined text-blue-700" style="font-variation-settings: 'FILL' 1, 'opsz' 20;">schedule</span>listdate </h3>
+                        <h3 class="text-md text-center  font-semibold text-gray-900 tracking-wide flex "><span class="material-symbols-outlined text-blue-700" style="font-variation-settings: 'FILL' 1, 'opsz' 20;">currency_rupee</span>Salary </h3>
+                    </div>     
+                    <div class="mt-4 ml-16 flex w-full space-x-3"> 
+                        <h3 class="text-md text-center font-semibold text-gray-900 tracking-wide flex "><span class="material-symbols-outlined text-blue-700" style="font-variation-settings: 'FILL' 1, 'opsz' 20;">tips_and_updates</span>Job title </h3>
+                        <h3 class="text-md text-center font-semibold text-gray-900 tracking-wide flex "><img src="{% static '/media/image/linkedin.png' %}" class=" mr-1 w-fit w-5 h-5" />Job title </h3> 
+                        <h3 class="text-md text-center font-semibold text-gray-900 tracking-wide flex "><img src="{% static '/media/image/linkedin.png' %}" class=" mr-1 w-fit w-5 h-5" />Job title </h3> 
+                    </div>     
+                    <div class="flex justify-end w-full"> 
+                        <button type="button" id="job-scrap-start-btn" class="align-middle text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply Now</button>
+                    </div>     
+                </div>   {% endcomment %}
+                 
+
+
+            </div>
+
+        </div>
+    
+    </div>
+
+
+
+{% endblock userbody %}
+

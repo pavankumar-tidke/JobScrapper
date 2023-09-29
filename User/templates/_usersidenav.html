@@ -1,0 +1,105 @@
+
+{% if userDetails.activate  %}
+
+
+
+<div class="sidebar  border border-gray-400  shadow-xl fixed top-0 bottom-0 lg:left-0 p-2 m-2 rounded-lg  w-[245px] overflow-y-auto text-center bg-">
+  <div class="text-gray-100 text-xl">
+    <div class="p-2.5 mt-1 flex justify-between w-full">
+      <div class="flex">
+        <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
+        <h1 class="font-bold text-black text-[15px] ml-3">Welcome, {{ userDetails.name }}</h1>
+      </div>
+      <div class="fixed ml-52 z-50 ">
+        
+      </div>
+    </div>
+    <div class="my-2 bg-gray-600 h-[1px]"></div>
+  </div>
+
+  <div class="flex flex-col justify-between h-fit relative ">
+
+    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200 te" > 
+      <a href="/" onclick="redirectToMobileUrl(event, '/_m_dashboard/')" class="flex items-center text-base font-normal text-gray-900 rounded-lg dark:text-white " >
+        <span class="material-symbols-outlined text-blue-800"> dashboard </span>
+        <span class="text-[15px] ml-4 text-black font-bold ">Dashboard</span>
+      </a> 
+    </div>   
+    
+    <div class="my-2 bg-gray-600 h-[1px]"> </div> 
+
+    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200" > 
+      <a href="/scrapper/" class="flex items-center text-base font-normal text-gray-900 rounded-lg dark:text-white " >
+        <span class="material-symbols-outlined text-blue-800"> hub </span>
+        <span class="text-[15px] ml-4 text-black font-bold">Scrap Jobs</span>
+      </a> 
+    </div> 
+
+    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200" > 
+      <a href="/favourite/" class="flex items-center text-base font-normal text-gray-900 rounded-lg dark:text-white " >
+        <span class="material-symbols-outlined text-blue-800"> favorite </span>
+        <span class="text-[15px] ml-4 text-black font-bold">Favourites</span>
+      </a> 
+    </div> 
+ 
+
+    <div class="my-2 bg-gray-600 h-[1px]"> </div> 
+
+    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-200" > 
+      <a href="/preference/" class="flex items-center text-base font-normal text-gray-900 rounded-lg dark:text-white " >
+        <span class="material-symbols-outlined text-blue-800"> settings_account_box </span>
+        <span class="text-[15px] ml-4 text-black font-bold">Preferences</span>
+      </a> 
+    </div> 
+    
+    <div class="my-2 bg-gray-600 h-[1px]"> </div> 
+
+    
+  </div>
+
+  <div class="my-4 absolute inset-x-0 bottom-0">  
+    <div class=" p-2">
+      <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-red-300 text-white" > 
+        <a href="/auth/userlogout/" class="flex items-center text-base font-normal   rounded-lg  text-white" >
+          <span class="material-symbols-outlined text-red-800"> logout </span>
+          <span class="text-[15px] ml-4 text-black   font-bold">Log Out</span>
+        </a> 
+      </div>
+    </div>   
+  </div>
+   
+</div>
+  
+{% else %}
+
+<div class="sidebar drop-shadow-md z-30 fixed top-0 bottom-0 lg:left-0 p-2 m-5 rounded-2xl w-[250px] overflow-y-auto text-center bg-slate-800">
+  <div class="text-gray-100 text-xl">
+    <div class="p-2.5 mt-1 flex items-center">
+      <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
+      <h1 class="font-bold text-gray-200 text-[15px] ml-3">Hi, {{ userDetails.name }}</h1>
+      <i
+        class="bi bi-x cursor-pointer ml-28 lg:hidden"
+        onclick="openSidebar()"
+      ></i>
+    </div>
+    <div class="my-2 bg-gray-600 h-[1px]"></div>
+  </div>
+
+    <p class="text-red-500 font-semibold text-md align-middle text-center"> Your Account is de-activated</p> 
+
+ 
+
+  <div class="my-4 absolute inset-x-0 bottom-0">  
+    <div class=" p-2">
+      <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-red-300 text-white" > 
+        <a href="/auth/userlogout/" class="flex items-center text-base font-normal   rounded-lg  text-white" >
+          <span class="material-symbols-outlined text-red-800"> logout </span>
+          <span class="text-[15px] ml-4 text-black   font-bold">Log Out</span>
+        </a> 
+      </div>
+    </div>   
+  </div>
+   
+</div>
+ 
+{% endif %}

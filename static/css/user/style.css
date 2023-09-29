@@ -1,0 +1,8 @@
+
+
+.mosque-card-bg {
+    background: url("/static/media/image/testimg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

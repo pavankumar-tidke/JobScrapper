@@ -1,0 +1,42 @@
+{% extends '_userbase.html' %}
+{% load static %}
+
+
+{% block usertitle %}User | Favourites{% endblock usertitle %}
+
+{% block userbreadcrumb_path %} <span class="material-symbols-outlined align-bottom text-blue-800">home</span> <span class="text-gray-500">/</span>&nbsp;&nbsp;&nbsp;Favourites {% endblock userbreadcrumb_path %}
+{% block userbreadcrumb_title %} Favourites {% endblock userbreadcrumb_title %}
+
+
+
+{% block userbody %}
+
+<div class="fav-card-list grid grid-cols-2 gap-5 mt-5">
+
+    {% comment %} <div class="w-full border border-gray-500 p-2 rounded-lg  shadow-lg hover:bg-blue-50 cursor-pointer ">
+        <div class="flex w-full">
+            <div class="flex w-full">
+                <img src="{% static '/media/image/linkedin.png' %}" class="mr-1 w-fit w-16 h-16" />
+                <div class=" w-full">
+                    <h3 class="text-xl font-bold text-black tracking-wide">Job title </h3>
+                    <h3 class="text-[14px] font-semibold text-gray-500 ">Job company name</h3>
+                    <h3 class="text-md font-normal text-gray-800 ">Job address</h3>
+                </div>  
+            </div> 
+            <div class="flex justify-end w-full space-x-2 ">
+                <span class="material-symbols-outlined text-red-600" style="font-variation-settings: 'FILL' 0;">delete</span> 
+            </div>  
+        </div>
+        <div class="mt-4 ml-16 flex w-full space-x-3">
+            <h3 class="text-md text-center  font-semibold text-gray-900 tracking-wide flex "><span class="material-symbols-outlined text-blue-700" style="font-variation-settings: 'FILL' 1, 'opsz' 20;">schedule</span>listdate </h3> 
+        </div>   
+        <div class="flex justify-end w-full"> 
+            <button type="button" id="job-scrap-start-btn" class="align-middle text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply Now</button>
+        </div>     
+    </div> {% endcomment %}
+
+</div>
+
+
+{% endblock userbody %}
+

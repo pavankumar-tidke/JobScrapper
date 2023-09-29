@@ -1,0 +1,103 @@
+{% extends '_userbase.html' %}
+
+
+{% block usertitle %}User | Dashboard{% endblock usertitle %}
+
+{% block userbreadcrumb_path %} <span class="material-symbols-outlined align-bottom text-blue-800">home</span> <span class="">/</span>&nbsp;&nbsp;&nbsp;Dashboard {% endblock userbreadcrumb_path %}
+{% block userbreadcrumb_title %} Dashboard {% endblock userbreadcrumb_title %}
+
+
+
+{% block userbody %}
+    {% csrf_token %}
+
+
+
+    {% comment %} MAIN DASHBOARD {% endcomment %}
+    <div class='p-5 w-full rounded-2xl border border-gray-600 drop-shadow-xl bg- mt-5'> 
+        <div class='absolute top-4 left-4 shadow-xl bg-blue-800 rounded-full h-16 w-16 flex items-center justify-center drop-shadow-xl'>
+            <span class="material-symbols-outlined text-white">
+                person
+            </span> 
+        </div>
+        <div class="flex flex-col">
+            <div class="flex justify-between ml-20 my-auto">
+                <div class="left-8">
+                    <div>
+                        <span class="text-black font-semibold text-lg">{{ userDetails.name }}</span>
+                        <h1 class='block text-gray-600 font-semibold text-sm text-left'> 
+                            Owner
+                        </h1>
+                    </div>
+                </div>
+                <div class="flex">  
+                    {% comment %} <button type="button" class="text-white bg-slate-700 hover:bg-slate-800 font-medium rounded-lg text-sm px-5 py-1 my-2 mr-2 ">Default</button>  {% endcomment %}
+                    {% comment %} {% if userDetails.activate  %} {% endcomment %}
+                        {% comment %} <a href="/addshop" type="button" class="text-white bg-slate-700 hover:bg-slate-800 font-medium rounded-lg text-sm px-5 py-1 my-2 mr-2">Shop + </a>  {% endcomment %}
+                    {% comment %} {% endif %} {% endcomment %}
+                </div>
+            </div>
+            <div class='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-1 my-10'>
+                <div class=" text-gray-900">
+                    <h6 class="font-semibold px-5">Platform Settings</h6>
+                    <div class="p-5">
+                        <span class="uppercase text-gray-700 text-[12px] font-extrabold">Account</span>
+                        <div class="">
+                            <div class="flex py-2">
+                                <span class="">
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        {% if userDetails.activate %}
+                                            <input type="checkbox" onChange="acc_action()"  class="deactive-toggle sr-only peer"  checked >
+                                            <div class="w-11 h-6 rounded-full peer  bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white  after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+                                            <span class="acc_status_text ml-3 text-sm font-medium  text-gray-300">De-activate Account</span> 
+                                        {% else %}
+                                            <input type="checkbox" onChange="acc_action()"  class="deactive-toggle sr-only peer" > 
+                                            <div class="w-11 h-6 rounded-full peer  bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white  after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+                                            <span class="acc_status_text ml-3 text-sm font-medium  text-gray-300">Activate Account</span>
+                                        {% endif %}
+                                    </label>
+                                </span> 
+                            </div>
+                        </div>
+                         
+                    </div>
+                    
+
+                </div>
+                <div class="border-r border-l border-gray-400 text-white ">
+                    <h6 class="text-gray-900 font-semibold px-5">Profile Information</h6>
+                    <div class="p-5">
+                        <p class="text-sm text-left text-gray-700 ">
+                            Hi, I’m {{ userDetails.name }}, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).
+                        </p> 
+                        <div class="py-5 my-5 border-t border-slate-400">
+                            <div class="flex py-2">
+                                <span class="font-semibold text-gray-600">Full Name : &nbsp;</span>
+                                <span class="font-normal text-gray-700">{{ userDetails.name }}</span>
+                            </div>
+                            <div class="flex py-2">
+                                <span class="font-semibold text-gray-600">Email : &nbsp;</span>
+                                <span class="font-normal text-gray-700">{{ userDetails.email }}</span>
+                            </div>
+                            {% comment %} <div class="flex py-2">
+                                <span class="font-semibold text-white">Phone No : &nbsp;</span>
+                                <span class="font-normal text-gray-300">+91 92434534</span>
+                            </div> {% endcomment %}
+                            <div class="flex py-2">
+                                <span class="font-semibold text-gray-600">Location : &nbsp;</span>
+                                <span class="font-normal text-gray-700">India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> 
+            </div>
+        </div>
+    </div>
+
+{% endblock userbody %}
+
+
+
+  
+  

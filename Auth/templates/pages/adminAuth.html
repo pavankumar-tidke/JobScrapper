@@ -1,0 +1,168 @@
+{% extends 'base2.html' %} 
+{% block authtitle %}Admin | Authentication {% endblock authtitle %} 
+    
+    
+
+
+{% block authbody %}
+
+
+  <div class="  items-center px-5 py-12 lg:px-20">
+    <!-- Signup form -->
+    <section class="signup-section bg-gray-900 rounded-lg">
+      <div
+        class="flex flex-col items-center justify-center px-6 py-3 mx-auto  mt-14"
+      >
+         
+        <div
+          class="w-full  rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0  bg-gray-800  border-gray-700"
+        >
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1
+              class="text-xl font-bold leading-tight tracking-tight  md:text-2xl  text-white"
+            >
+              Admin Registeration
+            </h1>
+            <form class="space-y-4 md:space-y-6" action="#">
+              <div>
+                  <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium  text-white"
+                    >Admin Name</label
+                  >
+                  <input
+                    type="text"
+                    name="adminname"
+                    id="name"
+                    class=" sm:text-sm rounded-lg  block w-full p-2.5  bg-gray-700  placeholder-gray-400  text-white "
+                    placeholder="kz4u5yk"
+                    required=""
+                  />
+              </div> 
+              <div>
+                <label
+                  for="email"
+                  class="block mb-2 text-sm font-medium  text-white"
+                  >Your email</label
+                >
+                <input
+                  type="email"
+                  name="adminemail"
+                  id="email"
+                  class="email sm:text-sm rounded-lg block w-full p-2.5  bg-gray-700  placeholder-gray-400  text-white "
+                  placeholder="name@company.com"
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="password"
+                  class="block mb-2 text-sm font-medium text-white"
+                  >Password Here</label
+                >
+                <input
+                  type="password"
+                  name="adminpassword"
+                  id="password"
+                  placeholder="••••••••"
+                  class="password  sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700  placeholder-gray-400  text-white  "
+                  required=""
+                />
+              </div> 
+              
+              <button
+                type="button"
+                class="adminsignup-submit w-full text-white focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-lime-600 "
+              >
+                Create an account
+              </button>
+              <p class="text-sm font-normal text-gray-400">
+                Already have an account?
+                <a
+                  class="login-link cursor-pointer font-medium hover:underline text-lime-500"
+                  >Login here</a
+                >
+              </p>
+            </form>
+ 
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- login form -->
+    <section class="login-section bg-gray-900 rounded-lg ">
+      <div
+        class="flex flex-col items-center justify-center mx-auto mt-14 "
+      >
+        <a
+          href="#"
+          class="flex items-center mb-6 text-2xl font-semibold text-white"
+        >
+          Admin Login
+        </a>
+        <div
+          class="w-full  rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0  bg-gray-800 "
+        >
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1
+              class="text-xl font-bold leading-tight tracking-tight  md:text-2xl  text-white"
+            >
+              Login In
+            </h1>
+            <form class="space-y-4 md:space-y-6" action="#"> 
+              <div>
+                <label
+                  for="email"
+                  class="block mb-2 text-sm font-medium  text-white"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="adminloginEmail"
+                  id="email"                                                                
+                  class=" sm:text-sm rounded-lg  block w-full p-2.5 bg-gray-700 placeholder-gray-400 text-white "
+                  placeholder="user.email@domain.com"
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="password"
+                  class="block mb-2 text-sm font-medium text-white"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  name="adminloginPassword"
+                  id="password"
+                  placeholder="••••••••"
+                  class=" sm:text-sm rounded-lg block w-full p-2.5  bg-gray-700  placeholder-gray-400  text-white "
+                  required=""
+                />
+              </div>
+              <input type="text" hidden class="whichOperation" >
+              <button
+                type="button"
+                class="adminlogin-submit w-full text-white  focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center  bg-lime-600 "
+              >
+                Login 
+              </button>
+              <p class="text-sm font-normal  text-gray-400">
+                Don't have an account?
+                <a
+                  class="signup-link cursor-pointer font-medium  hover:underline text-lime-500"
+                  >Signup here</a
+                >
+              </p>
+            </form> 
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+{% endblock authbody %}
